@@ -1,1 +1,0 @@
-/Users/vishalkumar/Desktop/Fetal-ML-Model/models/bin/gpt4all.app

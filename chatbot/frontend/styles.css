@@ -1,0 +1,141 @@
+/* #chatbot {
+  border: 1px solid #ccc;
+  width: 300px;
+  height: 400px;
+  padding: 10px;
+  overflow-y: auto;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+}
+
+#chat-window {
+  height: 340px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}
+
+#user-input {
+  width: 70%;
+} */
+
+/* General page styling */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+  color: #fff;
+}
+
+/* Chatbox container with glassmorphism */
+#chatbox {
+  width: 100%;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+#chatbox:hover {
+  transform: scale(1.01);
+}
+
+/* Chat messages */
+.message {
+  margin: 12px 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  max-width: 85%;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.user {
+  background: rgba(255, 77, 77, 0.7);
+  color: #fff;
+  text-align: right;
+  margin-left: auto;
+  border: 1px solid rgba(255, 77, 77, 0.4);
+}
+
+.bot {
+  background: rgba(255, 255, 255, 0.15);
+  color: #f5f5f5;
+  text-align: left;
+  margin-right: auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Smaller font for long answers */
+.long-text {
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+/* Input styling */
+textarea {
+  width: 75%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  resize: none;
+  transition: all 0.3s ease;
+}
+textarea:focus {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid #ff4d4d;
+}
+
+/* Button styling */
+button {
+  padding: 12px 18px;
+  margin-left: 8px;
+  border: none;
+  border-radius: 12px;
+  background: #ff4d4d;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background: #e60000;
+  transform: scale(1.05);
+}
+
+/* Scrollbar styling */
+#messages {
+  max-height: 450px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ff4d4d rgba(255, 255, 255, 0.1);
+}
+#messages::-webkit-scrollbar {
+  width: 6px;
+}
+#messages::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+#messages::-webkit-scrollbar-thumb {
+  background-color: #ff4d4d;
+  border-radius: 4px;
+}
+
+/* Fade-in animation for messages */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

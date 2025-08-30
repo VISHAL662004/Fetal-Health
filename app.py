@@ -8,9 +8,7 @@ import pickle
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# -------------------------------
 # Load trained model and features
-# -------------------------------
 model = joblib.load('voting_ensemble_model.pkl')
 with open('feature_names.pkl', 'rb') as f:
     feature_names = pickle.load(f)
@@ -21,16 +19,12 @@ try:
 except:
     feature_importances = np.ones(len(feature_names)) / len(feature_names)  # fallback
 
-# -------------------------------
 # App Layout
-# -------------------------------
 st.set_page_config(page_title="Fetal Health Prediction", page_icon="🤰", layout="wide")
-st.title("Fetal Health Prediction App")
+st.title("Fetal Health Prediction Portal")
 st.write("Predict fetal health from CTG features. You can enter data manually or upload a CSV file for batch predictions.")
 
-# -------------------------------
 # Input Section
-# -------------------------------
 st.header("Manual Input")
 
 medical_ranges = {
@@ -63,9 +57,7 @@ for feature in feature_names:
 
 input_df = pd.DataFrame([input_data])
 
-# -------------------------------
 # Prediction Section (Manual Input)
-# -------------------------------
 st.header("Prediction")
 if st.button("Predict Manual Input"):
     pred_class = model.predict(input_df)[0]
@@ -81,9 +73,7 @@ if st.button("Predict Manual Input"):
         st.error(f"Predicted Fetal Health Class: {pred_class} → Pathological ❌")
         st.info("Medical Note: Fetal health is pathological. Immediate medical attention required!")
 
-# -------------------------------
 # Batch Prediction Section
-# -------------------------------
 st.header("Batch Prediction (CSV Upload)")
 uploaded_file = st.file_uploader("Upload CSV with CTG features", type=["csv"])
 if uploaded_file is not None:
@@ -125,9 +115,7 @@ if uploaded_file is not None:
             mime="text/csv"
         )
 
-# -------------------------------
 # Feature Importance Visualization
-# -------------------------------
 st.header("Feature Importance")
 fi_df = pd.DataFrame({'Feature': feature_names, 'Importance': feature_importances})
 fi_df = fi_df.sort_values(by='Importance', ascending=False).head(10)

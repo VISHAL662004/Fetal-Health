@@ -12,6 +12,6 @@ pip install xgboost lightgbm catboost
 
 
 
-
+ uvicorn main:app --reload  
 
 streamlit run app.py

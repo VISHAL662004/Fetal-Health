@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2025-08-30T00:00:00.000Z" agent="5.0 (compatible)" version="20.7.10" type="device">
+  <diagram id="flowchart" name="ML Pipeline">
+    <mxGraphModel dx="1288" dy="751" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Start -->
+        <mxCell id="start" value="Start" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#4CAF50;fontColor=#FFFFFF;strokeColor=#388E3C;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Data Collection -->
+        <mxCell id="data" value="Data Collection&#10;(CTG Signals, CSV Input)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#2196F3;fontColor=#FFFFFF;strokeColor=#1976D2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="40" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Exploratory Data Analysis -->
+        <mxCell id="eda" value="Exploratory Data Analysis&#10;(Visualizations, Outlier Detection)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#00BCD4;fontColor=#FFFFFF;strokeColor=#0097A7;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="40" width="220" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Data Preprocessing -->
+        <mxCell id="preprocess" value="Data Preprocessing&#10;(Scaling, Encoding, Cleaning)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#FF9800;fontColor=#FFFFFF;strokeColor=#F57C00;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="40" width="220" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Feature Engineering -->
+        <mxCell id="feature" value="Feature Engineering&#10;(Feature Selection, Extraction)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#9C27B0;fontColor=#FFFFFF;strokeColor=#7B1FA2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="40" width="220" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Model Selection -->
+        <mxCell id="model" value="Model Selection&#10;(Random Forest, XGBoost, Ensemble)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#673AB7;fontColor=#FFFFFF;strokeColor=#512DA8;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="40" width="240" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Training -->
+        <mxCell id="training" value="Model Training&#10;(Cross-Validation, Hyperparameter Tuning)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#3F51B5;fontColor=#FFFFFF;strokeColor=#303F9F;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1580" y="40" width="260" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Evaluation -->
+        <mxCell id="evaluation" value="Model Evaluation&#10;(Accuracy, F1, Confusion Matrix)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#E91E63;fontColor=#FFFFFF;strokeColor=#C2185B;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1880" y="40" width="240" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Deployment -->
+        <mxCell id="deploy" value="Deployment&#10;(Streamlit App, API Integration)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#795548;fontColor=#FFFFFF;strokeColor=#5D4037;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="2180" y="40" width="220" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Arrows -->
+        <mxCell id="arrow1" edge="1" source="start" target="data" style="endArrow=block;html=1;strokeColor=#000000;" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow2" edge="1" source="data" target="eda" style="endArrow=block;html=1;strokeColor=#000000;" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow3" edge="1" source="eda" target="preprocess" style="endArrow=block;html=1;strokeColor=#000000;" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow4" edge="1" source="preprocess" target="feature" style="endArrow=block;html=1;strokeColor=#000000;" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow5" edge="1" source="feature" target="model" style="endArrow=block;html=1;strokeColor=#000000;" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow6" edge="1" source="model" target="training" style="endArrow=block;html=1;strokeColor=#000000;" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow7" edge="1" source="training" target="evaluation" style="endArrow=block;html=1;strokeColor=#000000;" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow8" edge="1" source="evaluation" target="deploy" style="endArrow=block;html=1;strokeColor=#000000;" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
